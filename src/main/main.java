@@ -12,6 +12,7 @@ public class main {
     public static void main(String[] args) throws IOException {
       main kata4=new main();
       kata4.execute();
+      MailListReaderBD.getInstance().read();
     }
     
     void execute() throws IOException {
@@ -22,7 +23,8 @@ public class main {
     
     void input() throws IOException {
         String fileName="email.txt";
-        mailList= MailListReader.read(fileName);
+        //mailList= MailListReader.read(fileName);
+        mailList = MailListReaderBD.getInstance().read();
     }
     
     void process() {
